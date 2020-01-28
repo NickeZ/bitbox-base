@@ -52,6 +52,7 @@ case ${ACTION} in
 		cp -a  base/customize-image.sh armbian-build/userpatches/		# copy customize script to standard Armbian build hook
 		cp -aR base/* armbian-build/userpatches/overlay/					# copy scripts and configuration items to overlay
 		cp -aR ../bin/go/* armbian-build/userpatches/overlay/bin/go			# copy additional software binaries to overlay
+		cp -aR patch/* armbian-build/userpatches
 
 		BOARD=${BOARD:-rockpro64}
 		BUILD_ARGS="docker BOARD=${BOARD} KERNEL_ONLY=no KERNEL_CONFIGURE=no BUILD_MINIMAL=yes BUILD_DESKTOP=no RELEASE=bionic BRANCH=legacy WIREGUARD=no PROGRESS_LOG_TO_FILE=yes"
